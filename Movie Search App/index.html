@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Movie Search brand">
+          <span class="brand-mark">🎬</span>
+          <div>
+            <p class="eyebrow">Discover</p>
+            <h1>Movie Search</h1>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+        </div>
+      </header>
+
+      <main class="app-panel">
+        <section class="hero" aria-label="Movie search introduction">
+          <div>
+            <p class="eyebrow">Find your next watch</p>
+            <h2>Search thousands of movies and series.</h2>
+          </div>
+        </section>
+
+        <form id="searchForm" class="search-bar" autocomplete="off">
+          <label class="sr-only" for="movieInput">Search for a movie</label>
+          <input type="text" id="movieInput" placeholder="Search by title, actor, or franchise">
+          <button id="searchBtn" type="submit">Search</button>
+        </form>
+
+        <div class="toolbar" aria-label="Search filters">
+          <div class="filter-group">
+            <label for="typeFilter">Type</label>
+            <select id="typeFilter" aria-label="Filter by type">
+              <option value="">All types</option>
+              <option value="movie">Movies</option>
+              <option value="series">Series</option>
+              <option value="episode">Episodes</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="yearFilter">Year</label>
+            <input type="number" id="yearFilter" min="1900" max="2100" placeholder="Any year" aria-label="Filter by year">
+          </div>
+        </div>
+
+        <div class="status-row">
+          <div id="apiStatus" class="status-badge" aria-live="polite"></div>
+          <div id="statusText" class="status-text" aria-live="polite"></div>
+        </div>
+
+        <div id="results" class="results-grid" aria-live="polite"></div>
+        <div id="pager" class="pager" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button id="closeModal" class="close-modal" type="button" aria-label="Close details">✕</button>
+        <div id="modalPoster" class="modal-poster"></div>
+        <div class="modal-content">
+          <h2 id="modalTitle">Movie details</h2>
+          <div id="modalMeta" class="modal-meta"></div>
+          <p id="modalPlot" class="modal-plot"></p>
+          <div id="modalExtra" class="modal-extra"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
