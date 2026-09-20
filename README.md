@@ -2,7 +2,7 @@
 
 A movie search & discovery app using OMDB / TMDB API - search movies, view details, ratings, and watchlists.
 
-**Live Demo:** https://your-link.vercel.app
+**Live Demo: https://david01afolayan.github.io/Movie-Search-App/
 **Repo:** https://github.com/David01Afolayan/Movie-Search-App
 
 ## Features
